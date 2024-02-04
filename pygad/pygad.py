@@ -607,6 +607,8 @@ class GA(utils.parent_selection.ParentSelection,
                     self.crossover = self.uniform_crossover
                 elif (crossover_type == "scattered"):
                     self.crossover = self.scattered_crossover
+                elif (crossover_type == "blxa"):
+                    self.crossover = self.blx_alpha_crossover
                 else:
                     self.valid_parameters = False
                     raise TypeError(f"Undefined crossover type. \nThe assigned value to the crossover_type ({crossover_type}) parameter does not refer to one of the supported crossover types which are: \n-single_point (for single point crossover)\n-two_points (for two points crossover)\n-uniform (for uniform crossover)\n-scattered (for scattered crossover).\n")
